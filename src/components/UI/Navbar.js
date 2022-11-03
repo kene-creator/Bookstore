@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { Link } from 'react-router-dom';
 import React from 'react';
 import Icons from './icons.svg';

@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Book = (props) => (
   <div className="flex justify-between align-center h-40 bg-white w-full drop-shadow-sm mb-6 p-6 font-mono">
     <div className="basis-1/3">

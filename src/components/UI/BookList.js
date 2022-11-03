@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+
 import Book from './Book.js';
 
 const BookList = (props) => (

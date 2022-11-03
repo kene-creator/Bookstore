@@ -55,9 +55,6 @@ module.exports = {
       transitionTimingFunction: {
         'menu-expo': 'cubic-bezier(0.87, 0, 0.13, 1)',
       },
-      boxShadow: {
-        inner: 'inset 0 0 7px 0 rgba(0, 0, 0, 0.7)',
-      },
       screens: {
         vsm: { max: '450px' },
         minSm: { min: '450px' },

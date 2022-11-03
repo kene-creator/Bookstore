@@ -9,18 +9,18 @@ const Book = (props) => (
         <p className="text-blue-600">{props.author}</p>
       </div>
       <div className="mt-4">
-        <a href="" className="pr-4 text-blue-400">
+        <a href="" className="pr-4 text-blue-400 hover:text-blue-700">
           Comments
         </a>
         <a
           href=""
-          className="pl-4 pr-4 text-blue-400 border-l border-black border-solid"
+          className="pl-4 pr-4 text-blue-400 hover:text-blue-700 border-l border-black border-solid"
         >
           Remove
         </a>
         <a
           href=""
-          className="pl-4 text-blue-400 border-l border-black border-solid"
+          className="pl-4 text-blue-400 hover:text-blue-700 border-l border-black border-solid"
         >
           Edit
         </a>

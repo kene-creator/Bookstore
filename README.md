@@ -1,70 +1,66 @@
-# Getting Started with Create React App
+![](https://img.shields.io/badge/Microverse-blueviolet)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# React Bookstore
 
-## Available Scripts
+> This is a demo bookstore webapp
 
-In the project directory, you can run:
+## Built With
 
-### `npm start`
+- React
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Live Link
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+To get a local copy up and running follow these simple example steps.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Prerequisites
 
-### `npm run build`
+- Have a Desktop or Laptop Computer running on with Windows, Mac OS or Linux operating system.
+- Have git installed on the Computer
+- Have a browser installed on the Computer
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Install
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- To clone the project on your machine: Type `git clone https://github.com/kene-creator/Math-magician.git`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- To build project files in development mode _(the destination folder is /dist)_:
+  `npm run build`
+- To run the project on webpack live server:
+  `npm run start`
 
-### `npm run eject`
+### Install
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Webhint
+- StyleLint
+- eslint
+- React
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Author 1
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+👤 **Kenechuwku Agagwu**
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- GitHub: [@kene-creator](https://github.com/kene-creator)
+- Twitter: [@kay_yung1](https://twitter.com/kay_yung1)
+- LinkedIn: [@Kenechuwku Agagwu](https://linkedin.com/in/kenechukwuagagwu)
 
-## Learn More
+## 🤝 Contributing
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Contributions, issues, and feature requests are welcome!
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feel free to check the [issues page](https://github.com/kene-creator/Math-magician.git/issues).
 
-### Code Splitting
+## Show your support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Give a ⭐️ if you like this project!
 
-### Analyzing the Bundle Size
+## Acknowledgments
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Hat tip to anyone whose code was used
+- And to Microverse code reviewers for there guidance
 
-### Making a Progressive Web App
+## 📝 License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This project is [MIT](./LICENSE) licensed.
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._

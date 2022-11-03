@@ -32,7 +32,7 @@ const Book = (props) => (
           style={{
             backgroundImage: `conic-gradient(#4d5df9 ${
               props.percentage * 3.6
-            }deg, #cadcff ${props.percentage * 3.6}deg)`,
+            }deg, #cadcff ${props.percentage * 3.6}deg)`
           }}
         ></div>
       </div>

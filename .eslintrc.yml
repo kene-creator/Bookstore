@@ -12,6 +12,7 @@
     ],
   'rules':
     {
+      'comma-dangle': ['error', 'never'],
       'react/prop-types': 'off',
       'no-shadow': 'off',
       'no-param-reassign': 'off',

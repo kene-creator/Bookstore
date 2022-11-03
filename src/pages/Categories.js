@@ -1,6 +1,3 @@
-/* eslint-disable no-unused-vars */
-import React from 'react';
-
 const Categories = () => (
   <div className="flex justify-center align-center mt-24">
     <button className="rounded-lg bg-white drop-shadow-lg p-3" type="submit">

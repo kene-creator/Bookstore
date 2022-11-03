@@ -1,4 +1,5 @@
 {
   "singleQuote": true,
-  "prettier.endOfLine": "lf"
+  "prettier.endOfLine": "lf",
+  "trailingComma": "none"
 }

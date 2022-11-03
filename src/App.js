@@ -12,7 +12,7 @@ const DUMMY_BOOKS = [
     title: 'The Hunger games',
     author: 'Suzanne Collins',
     genre: 'Action',
-    percentage: 20,
+    percentage: 20
   },
 
   {
@@ -20,7 +20,7 @@ const DUMMY_BOOKS = [
     title: 'Rhapsody of Realities',
     author: 'Pastor Chris',
     genre: 'Action',
-    percentage: 45,
+    percentage: 45
   },
 
   {
@@ -28,15 +28,15 @@ const DUMMY_BOOKS = [
     title: 'Eat that Frog',
     author: 'John Maxwell',
     genre: 'Action',
-    percentage: 75,
+    percentage: 75
   },
   {
     id: '4',
     title: 'The Hunger games',
     author: 'Suzanne Collins',
     genre: 'Action',
-    percentage: 43,
-  },
+    percentage: 43
+  }
 ];
 
 function App() {

@@ -1,13 +1,15 @@
-/* eslint comma-dangle: ["error", "never"] */
 import React from 'react';
-// eslint-disable-next-line
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom/client.js';
+
+import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import App from './App.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
 );

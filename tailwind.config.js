@@ -63,5 +63,5 @@ module.exports = {
       }
     }
   },
-  plugins: ['tailwindcss']
+  plugins: ['tailwindcss', 'tailwind-scrollbar']
 };

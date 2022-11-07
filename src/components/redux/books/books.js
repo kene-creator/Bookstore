@@ -24,7 +24,7 @@ const booksReducer = (state = [], action) => {
 
 export const addBook = (bookTitle, bookAuthor, bookId, genre, percentage) => {
   const book = {
-    type: 'ADD_BOOK',
+    type: ADD_BOOK,
     title: bookTitle,
     author: bookAuthor,
     genre,
@@ -36,7 +36,7 @@ export const addBook = (bookTitle, bookAuthor, bookId, genre, percentage) => {
 
 export const removeBook = (bookId) => {
   const removedBook = {
-    type: 'REMOVE_BOOK',
+    type: REMOVE_BOOK,
     id: bookId
   };
   return removedBook;

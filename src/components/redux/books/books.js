@@ -42,4 +42,7 @@ export const removeBook = (bookId) => {
   return removedBook;
 };
 
+export const addBookType = () => ({ type: ADD_BOOK });
+export const RemoveBookType = () => ({ type: REMOVE_BOOK });
+
 export default booksReducer;

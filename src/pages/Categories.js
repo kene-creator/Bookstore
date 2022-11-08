@@ -1,9 +1,12 @@
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 
 import { checkStatus } from '../components/redux/categories/categories.js';
 
 const Categories = () => {
-  const categoryReducer = useSelector((state) => state.categoriesReducer);
+  const categoryReducer = useSelector(
+    (state) => state.categoriesReducer,
+    shallowEqual
+  );
   const dispatch = useDispatch();
 
   return (

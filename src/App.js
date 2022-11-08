@@ -1,46 +1,20 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import Navbar from './components/UI/Navbar.js';
 import Categories from './pages/Categories.js';
 import Card from './components/UI/Card.js';
 import BookList from './components/UI/BookList.js';
 import Form from './components/Form/Form.js';
 
-const DUMMY_BOOKS = [
-  {
-    id: '1',
-    title: 'The Hunger games',
-    author: 'Suzanne Collins',
-    genre: 'Action',
-    percentage: 20
-  },
-
-  {
-    id: '2',
-    title: 'Rhapsody of Realities',
-    author: 'Pastor Chris',
-    genre: 'Action',
-    percentage: 45
-  },
-
-  {
-    id: '3',
-    title: 'Eat that Frog',
-    author: 'John Maxwell',
-    genre: 'Action',
-    percentage: 75
-  },
-  {
-    id: '4',
-    title: 'The Hunger games',
-    author: 'Suzanne Collins',
-    genre: 'Action',
-    percentage: 43
-  }
-];
-
 function App() {
-  const [books, setBooks] = useState(DUMMY_BOOKS);
+  const dumBooks = useSelector((state) => state.booksReducer);
+  const [books, setBooks] = useState(dumBooks);
+
+  useEffect(() => {
+    setBooks(dumBooks);
+  }, [dumBooks]);
+
   return (
     <React.Fragment>
       <Navbar />

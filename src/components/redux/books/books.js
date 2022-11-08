@@ -1,9 +1,11 @@
+import { v4 as uuidv4 } from 'uuid';
+
 const ADD_BOOK = 'book-store-app/books/ADD_BOOK';
 const REMOVE_BOOK = 'book-store-app/books/REMOVE_BOOK';
 
 const DUMMY_BOOKS = [
   {
-    id: '1',
+    id: uuidv4(),
     title: 'The Hunger games',
     author: 'Suzanne Collins',
     genre: 'Action',
@@ -11,7 +13,7 @@ const DUMMY_BOOKS = [
   },
 
   {
-    id: '2',
+    id: uuidv4(),
     title: 'Rhapsody of Realities',
     author: 'Pastor Chris',
     genre: 'Action',
@@ -19,14 +21,14 @@ const DUMMY_BOOKS = [
   },
 
   {
-    id: '3',
+    id: uuidv4(),
     title: 'Eat that Frog',
     author: 'John Maxwell',
     genre: 'Action',
     percentage: 75
   },
   {
-    id: '4',
+    id: uuidv4(),
     title: 'The Hunger games',
     author: 'Suzanne Collins',
     genre: 'Action',

@@ -7,7 +7,7 @@ const categoriesReducer = (state = [], action) => {
   return state;
 };
 
-export const CheckStatus = () => {
+export const checkStatus = () => {
   const status = {
     type: CHECK_STATUS,
     text: 'Under construction'

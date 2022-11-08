@@ -5,8 +5,8 @@ import { addBook } from '../redux/books/books.js';
 
 const Form = () => {
   const dispatch = useDispatch();
-  const titleInputRef = useRef();
-  const authorInputRef = useRef();
+  const titleInputRef = useRef(null);
+  const authorInputRef = useRef(null);
 
   const addBookHandler = (e) => {
     e.preventDefault();
@@ -15,6 +15,8 @@ const Form = () => {
     const send = dispatch(
       addBook(title, author, uuidv4(), 'Action', Math.ceil(Math.random() * 10))
     );
+    titleInputRef.current.value = '';
+    authorInputRef.current.value = '';
     return send;
   };
 

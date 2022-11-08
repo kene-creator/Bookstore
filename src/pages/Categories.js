@@ -8,7 +8,7 @@ const Categories = () => {
 
   return (
     <div className="flex justify-center flex-col items-center mt-24 w-full">
-      <h1>{categoryReducer}</h1>
+      <h1 className="font-medium text-3xl text-red-400 ">{categoryReducer}</h1>
       <button
         className="rounded-lg bg-white drop-shadow-lg p-3 w-40 mt-24"
         type="submit"

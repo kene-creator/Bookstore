@@ -10,7 +10,7 @@ const categoriesReducer = (state = [], action) => {
 export const checkStatus = () => {
   const status = {
     type: CHECK_STATUS,
-    text: 'Under construction'
+    text: 'Under construction ⚠'
   };
   return status;
 };

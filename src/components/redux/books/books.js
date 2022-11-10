@@ -12,7 +12,6 @@ const url =
 
 const bookReducer = (state = bookList, action) => {
   const { type, payload } = action;
-  console.log(action);
   switch (type) {
     case 'book-store-react/books/FETCH_BOOKS/fulfilled':
       return payload.books;

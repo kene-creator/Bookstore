@@ -1,19 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import { useSelector, shallowEqual } from 'react-redux';
+import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import Navbar from './components/UI/Navbar.js';
 import Categories from './pages/Categories.js';
 import Card from './components/UI/Card.js';
 import BookList from './components/UI/BookList.js';
 import Form from './components/Form/Form.js';
+import { fetchBooks } from './components/redux/books/books.js';
 
 function App() {
-  const dumBooks = useSelector((state) => state.booksReducer, shallowEqual);
-  const [books, setBooks] = useState(dumBooks);
+  const apiBooks = useSelector((state) => state.book, shallowEqual);
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    setBooks(dumBooks);
-  }, [dumBooks]);
+    dispatch(fetchBooks());
+    // setBooks(apiBooks);
+  }, [dispatch]);
 
   return (
     <React.Fragment>
@@ -24,7 +26,7 @@ function App() {
           element={
             <>
               <Card>
-                <BookList bookItem={books} setBooks={setBooks}></BookList>
+                <BookList bookItem={apiBooks}></BookList>
               </Card>
               <Form />
             </>

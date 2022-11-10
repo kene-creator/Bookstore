@@ -1,83 +1,62 @@
-import { v4 as uuidv4 } from 'uuid';
+import { createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
 
 const ADD_BOOK = 'book-store-app/books/ADD_BOOK';
+const FETCH_BOOKS = 'book-store-react/books/FETCH_BOOKS';
 const REMOVE_BOOK = 'book-store-app/books/REMOVE_BOOK';
 
-const DUMMY_BOOKS = [
-  {
-    id: uuidv4(),
-    title: 'The Hunger games',
-    author: 'Suzanne Collins',
-    genre: 'Action',
-    percentage: 20
-  },
+const bookList = [];
+// eslint-disable-next-line operator-linebreak
+const url =
+  'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/BDargG3MOWpp98NgP4Mb/books/';
 
-  {
-    id: uuidv4(),
-    title: 'Rhapsody of Realities',
-    author: 'Pastor Chris',
-    genre: 'Action',
-    percentage: 45
-  },
+const bookReducer = (state = bookList, action) => {
+  const { type, payload } = action;
+  console.log(action);
+  switch (type) {
+    case 'book-store-react/books/FETCH_BOOKS/fulfilled':
+      return payload.books;
 
-  {
-    id: uuidv4(),
-    title: 'Eat that Frog',
-    author: 'John Maxwell',
-    genre: 'Action',
-    percentage: 75
-  },
-  {
-    id: uuidv4(),
-    title: 'The Hunger games',
-    author: 'Suzanne Collins',
-    genre: 'Action',
-    percentage: 43
+    case 'book-store-app/books/ADD_BOOK/fulfilled':
+      return [...state, payload.books];
+
+    case 'book-store-app/books/REMOVE_BOOK/fulfilled':
+      return state.filter((item) => item.item_id !== payload.item_id);
+
+    default:
+      return state;
   }
-];
-
-const booksReducer = (state = DUMMY_BOOKS, action) => {
-  if (action.type === ADD_BOOK) {
-    return [
-      ...state,
-      {
-        title: action.title,
-        author: action.author,
-        genre: action.genre,
-        percentage: action.percentage,
-        id: action.id
-      }
-    ];
-  }
-
-  if (action.type === REMOVE_BOOK) {
-    return state.filter((book) => book.id !== action.id);
-  }
-
-  return state;
 };
 
-export const addBook = (bookTitle, bookAuthor, bookId, genre, percentage) => {
-  const book = {
-    type: ADD_BOOK,
-    title: bookTitle,
-    author: bookAuthor,
-    genre,
-    percentage,
-    id: bookId
+export const fetchBooks = createAsyncThunk(FETCH_BOOKS, async () => {
+  const res = await axios.get(url);
+  const resultArray = Object.entries(res.data);
+
+  return {
+    books: resultArray.map(([key, value]) => ({ ...value[0], item_id: key }))
   };
-  return book;
-};
+});
 
-export const removeBook = (bookId) => {
-  const removedBook = {
-    type: REMOVE_BOOK,
-    id: bookId
+export const addBook = createAsyncThunk(ADD_BOOK, async (payload) => {
+  await axios.post(url, {
+    item_id: payload.id,
+    title: payload.title,
+    author: payload.author,
+    category: payload.category,
+    percentage: payload.percentage
+  });
+
+  return {
+    books: payload
   };
-  return removedBook;
-};
+});
 
-export const addBookType = () => ({ type: ADD_BOOK });
-export const RemoveBookType = () => ({ type: REMOVE_BOOK });
+export const removeBook = createAsyncThunk(REMOVE_BOOK, async (itemId) => {
+  await axios.delete(
+    `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/BDargG3MOWpp98NgP4Mb/books/${itemId}`
+  );
 
-export default booksReducer;
+  return { itemId };
+});
+
+export default bookReducer;

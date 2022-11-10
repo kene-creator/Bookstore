@@ -3,15 +3,14 @@ import { useDispatch, useSelector, shallowEqual } from 'react-redux';
 import { checkStatus } from '../components/redux/categories/categories.js';
 
 const Categories = () => {
-  const categoryReducer = useSelector(
-    (state) => state.categoriesReducer,
-    shallowEqual
-  );
+  const categoryReducer = useSelector((state) => state.category, shallowEqual);
   const dispatch = useDispatch();
 
   return (
     <div className="flex justify-center flex-col items-center mt-24 w-full">
-      <h1 className="font-medium text-3xl text-red-400 ">{categoryReducer}</h1>
+      <h1 className="font-medium text-3xl text-red-400 animate-bounce">
+        {categoryReducer}
+      </h1>
       <button
         className="rounded-lg bg-white drop-shadow-lg p-3 w-40 mt-24"
         type="submit"

@@ -1,14 +1,19 @@
 import { useDispatch } from 'react-redux';
+
 import { removeBook } from '../redux/books/books.js';
 
 const Book = (props) => {
   const dispatch = useDispatch();
 
+  const deleteHandler = (id) => {
+    dispatch(removeBook(id));
+  };
+
   return (
     <div className="flex justify-between align-center h-40 bg-white w-full drop-shadow-sm mb-6 p-6 font-mono">
       <div className="basis-1/3">
         <div>
-          <p className="font-thin">{props.genre}</p>
+          <p className="font-thin">{props.category}</p>
           <h3 className="text-2xl font-normal">{props.title}</h3>
           <p className="text-blue-600">{props.author}</p>
         </div>
@@ -21,7 +26,7 @@ const Book = (props) => {
             className="pl-4 pr-4 text-blue-400 hover:text-blue-700 border-l border-black border-solid"
             onClick={(e) => {
               e.preventDefault();
-              dispatch(removeBook(props.id));
+              deleteHandler(props.id);
             }}
           >
             Remove

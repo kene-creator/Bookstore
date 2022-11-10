@@ -1,23 +1,32 @@
 import { useDispatch } from 'react-redux';
-import { useRef } from 'react';
+import { useRef, useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { addBook } from '../redux/books/books.js';
+
+import { addBook, fetchBooks } from '../redux/books/books.js';
 
 const Form = () => {
   const dispatch = useDispatch();
   const titleInputRef = useRef(null);
   const authorInputRef = useRef(null);
 
+  useEffect(() => {
+    dispatch(fetchBooks());
+  }, [dispatch]);
+
   const addBookHandler = (e) => {
     e.preventDefault();
     const title = titleInputRef.current.value;
     const author = authorInputRef.current.value;
-    const send = dispatch(
-      addBook(title, author, uuidv4(), 'Action', Math.ceil(Math.random() * 10))
-    );
+    const state = {
+      id: uuidv4(),
+      title,
+      author,
+      category: 'Action',
+      percentage: Math.ceil(Math.random() * 10)
+    };
+    dispatch(addBook(state));
     titleInputRef.current.value = '';
     authorInputRef.current.value = '';
-    return send;
   };
 
   return (

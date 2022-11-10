@@ -10,12 +10,12 @@ const BookList = (props) => {
       <li className="mb-4 w-10/12">
         {props.bookItem.map((book) => (
           <Book
-            key={book.id}
-            id={book.id}
+            key={book.item_id}
+            id={book.item_id}
             title={book.title}
             author={book.author}
-            genre={book.genre}
-            percentage={book.percentage}
+            category={book.category}
+            percentage={Math.ceil(Math.random() * 20)}
           ></Book>
         ))}
       </li>

@@ -1,46 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { useSelector, shallowEqual, useDispatch } from 'react-redux';
 import Navbar from './components/UI/Navbar.js';
 import Categories from './pages/Categories.js';
 import Card from './components/UI/Card.js';
 import BookList from './components/UI/BookList.js';
 import Form from './components/Form/Form.js';
-
-const DUMMY_BOOKS = [
-  {
-    id: '1',
-    title: 'The Hunger games',
-    author: 'Suzanne Collins',
-    genre: 'Action',
-    percentage: 20
-  },
-
-  {
-    id: '2',
-    title: 'Rhapsody of Realities',
-    author: 'Pastor Chris',
-    genre: 'Action',
-    percentage: 45
-  },
-
-  {
-    id: '3',
-    title: 'Eat that Frog',
-    author: 'John Maxwell',
-    genre: 'Action',
-    percentage: 75
-  },
-  {
-    id: '4',
-    title: 'The Hunger games',
-    author: 'Suzanne Collins',
-    genre: 'Action',
-    percentage: 43
-  }
-];
+import { fetchBooks } from './components/redux/books/books.js';
 
 function App() {
-  const [books, setBooks] = useState(DUMMY_BOOKS);
+  const apiBooks = useSelector((state) => state.book, shallowEqual);
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fetchBooks());
+    // setBooks(apiBooks);
+  }, [dispatch]);
+
   return (
     <React.Fragment>
       <Navbar />
@@ -50,7 +26,7 @@ function App() {
           element={
             <>
               <Card>
-                <BookList bookItem={books} setBooks={setBooks}></BookList>
+                <BookList bookItem={apiBooks}></BookList>
               </Card>
               <Form />
             </>

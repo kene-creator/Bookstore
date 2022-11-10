@@ -35,22 +35,24 @@ const Form = () => {
       className="flex justify-center flex-col items-center  w-full mb-12"
       onSubmit={addBookHandler}
     >
-      <h3 className="self-start ml-80 text-2xl">Add new book</h3>
-      <div>
+      <h3 className="ml-auto mr-auto mb-8 text-3xl font-semibold">
+        Add new book
+      </h3>
+      <div className="w-full flex justify-center">
         <input
           type="text"
           placeholder="Book Title"
-          className="p-2 bg-white border-black border-solid border"
+          className="p-1.5 bg-white border-black border-solid border w-1/3"
           ref={titleInputRef}
         />
         <input
           type="text"
           placeholder="Author"
-          className="ml-4 p-2 border-black border-solid border"
+          className="ml-4 p-2 border-black border-solid border w-1/3"
           ref={authorInputRef}
         />
         <button
-          className="ml-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 mt-4"
+          className="ml-8 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4"
           onClick={addBookHandler}
         >
           Add Book

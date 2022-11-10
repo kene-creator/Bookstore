@@ -10,6 +10,8 @@
 
 ## Live Link
 
+[Go live](https://beautiful-otter-1c7e20.netlify.app/)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
